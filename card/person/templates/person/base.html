@@ -7,9 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+<style>
+  th, tr, td{
+    border: 1px solid grey;
+    padding: 2px 4px;
+  }
+</style>
 </head>
 <body>
+  <img src="" alt="">
     <div class="container">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <!-- Brand/logo -->
@@ -20,6 +26,10 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'person:persons' %}">PERSONS</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'person:add_person' %}">ADD PERSON</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{% url 'admin:index' %}">ADMIN</a>
           </li>

@@ -15,14 +15,14 @@ class PersonAdmin(admin.ModelAdmin):
             'issue_date', 'expiry_date', 'issuing_authority']}),
 
         ('Card information', {'fields': [
-            'card_nunber', 'personal_number']}),
+            'card_number', 'personal_number']}),
 
         ('photo information', {'fields': [
             'photo', 'sex']}),
 
 
         ('Date information', {'fields': [
-            'birth_date', 'birth_place', 'citizen'], 'classes': ['collapse']}),
+            'birth_date', 'birth_place', 'citizen']}),
     ]
     list_display = ('first_name', 
     'last_name', 'birth_date', 'personal_number')
