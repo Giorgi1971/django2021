@@ -6,7 +6,7 @@ class Person(models.Model):
     first_name = models.CharField(max_length=48)
     last_name = models.CharField(max_length=48)
     photo = models.ImageField(upload_to='photo')
-    Citizen = models.CharField(max_length=24)
+    citizen = models.CharField(max_length=24)
     class SexType(models.TextChoices):
         M = 'M', 'Male'
         F = 'F', 'Female'
@@ -15,8 +15,15 @@ class Person(models.Model):
         choices=SexType.choices,
     )
     personal_number = models.SmallIntegerField(unique=True)
-    Birth_date = models.DateField()
+    birth_date = models.DateField()
     expiry_date = models.DateField()
-    Birth_place = models.CharField(max_length=120)
+    birth_place = models.CharField(max_length=120)
     issue_date = models.DateField()
     issuing_authority = models.CharField(max_length=256)
+
+    def full_name(self):
+        return self.first_name + ' ' + self.last_name
+
+    def __str__(self) -> str:
+        return self.first_name + ' ' + self.last_name
+

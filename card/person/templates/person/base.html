@@ -6,9 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
-    {% block body %}
-    {% endblock %}
-</body>
+    <div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="{% url 'person:index' %}">Logo</a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'person:persons' %}">PERSONS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">ADMIN</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'person:persons' %}">Registration</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'person:persons' %}">Login</a>
+              </li>
+              </ul>
+  
+      </nav>
+      
+
+        {% block body %}
+        
+        {% endblock %}
+
+    </div>
+    </body>
 </html>

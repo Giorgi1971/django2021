@@ -4,4 +4,38 @@
 {% block body %}
 
 <h1>This is Person list Page!</h1>
+
+{% if person_list %}
+<div class="jumbotron">
+    <div class="row">
+
+        {% for i in person_list %}
+        <div class="col-4">
+
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    <h4 class="card-title"> {{ i.full_name }}</h4>
+                    <p class="card-text">Name: {{ i.first_name }}</p>
+                    <p class="card-text">Surname: {{ i.last_name }}</p>
+                    <p class="card-text">Citizen: {{ i.citizen }}</p>
+                    <p class="card-text">Personal number: {{ i.personal_number }}</p>
+                    <p class="card-text">Sex: {{ i.sex }}</p>
+                    <p class="card-text">Birth date: {{ i.birth_date }}</p>
+                    <p class="card-text">Expiry date: {{ i.expiry_date }}</p>
+                    <p class="card-text">Birth place: {{ i.birth_place }}</p>
+                    <p class="card-text">Issue date: {{ i.issue_date }}</p>
+                    <p class="card-text">Issue date: {{ i.issuing_authority }}</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+                <img class="card-img-bottom" src="img_avatar6.png" alt="Card image" style="width:100%">
+            </div>
+            
+            {{ i }}
+            
+        </div>
+    {% endfor %}
+</div>
+</div>
+    {% endif %}
+
 {% endblock %}
