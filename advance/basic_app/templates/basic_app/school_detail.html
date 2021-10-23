@@ -1,0 +1,35 @@
+{% extends 'basic_app/basic_app.html' %}
+
+{% block body %}
+
+<h1>
+    Welcome School list!
+</h1>
+
+<h3>
+    <p>
+        Name:  {{ school_detail.name }}
+    </p>
+    <p>
+
+        principal:  {{ school_detail.principal }}
+    </p>
+    <p>
+        location:  {{ school_detail.location }}
+
+    </p>
+</h3>
+<h4>
+    Students:
+</h4>
+<ol>
+
+    {% for stud in school_detail.students.all %}
+    <li>
+        student: {{ stud.name }} age {{ stud.age }}.
+
+    </li>
+    {% endfor %}
+</ol>
+
+{% endblock %}
